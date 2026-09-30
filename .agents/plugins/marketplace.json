@@ -1,0 +1,20 @@
+{
+  "name": "akashmahedy-plugins",
+  "interface": {
+    "displayName": "akashmahedy Plugins / 插件"
+  },
+  "plugins": [
+    {
+      "name": "tencent-docs",
+      "source": {
+        "source": "local",
+        "path": "./plugins/tencent-docs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "tencent-docs",
+  "version": "1.1.0",
+  "description": "Tencent Docs for Codex with guided setup / 腾讯文档 Codex 插件，提供引导式安装与配置。",
+  "author": {
+    "name": "akashmahedy",
+    "url": "https://github.com/akashmahedy"
+  },
+  "homepage": "https://akashmahedy.github.io/tencent-docs-codex-plugin/",
+  "repository": "https://github.com/akashmahedy/tencent-docs-codex-plugin",
+  "license": "MIT",
+  "keywords": [
+    "tencent-docs",
+    "腾讯文档",
+    "codex",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Tencent Docs / 腾讯文档",
+    "shortDescription": "Read and edit Tencent Docs / 读取与编辑腾讯文档",
+    "longDescription": "Community plugin created by akashmahedy. Connects to Tencent's official MCP service with your own token. 社区插件，由 akashmahedy 创建；使用个人令牌连接腾讯官方 MCP 服务。",
+    "developerName": "akashmahedy",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://akashmahedy.github.io/tencent-docs-codex-plugin/",
+    "privacyPolicyURL": "https://akashmahedy.github.io/tencent-docs-codex-plugin/privacy.html",
+    "defaultPrompt": [
+      "Find and summarize a Tencent Docs document.",
+      "查找并总结一份腾讯文档。"
+    ]
+  }
+}

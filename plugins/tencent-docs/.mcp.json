@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tencent_docs": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "scripts/bridge.mjs"
+      ],
+      "cwd": "."
+    }
+  }
+}
