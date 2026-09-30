@@ -26,7 +26,7 @@ export class CredentialStore {
         ['find-generic-password','-s',this.service,'-a',ACCOUNT,'-w'], {encoding:'utf8',stdio:['ignore','pipe','pipe'],timeout:15000}).trim());
       const value = JSON.parse(readFileSync(this.file, 'utf8'));
       if (this.platform === 'win32') return validateToken(this.powershell(
-        '$v=[Console]::In.ReadToEnd(); ConvertTo-SecureString $v | ForEach-Object { $p=[Runtime.InteropServices.Marshal]::SecureStringToBSTR($_); try { [Runtime.InteropServices.Marshal]::PtrToStringBSTR($p) } finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($p) } }',
+        '[void][Reflection.Assembly]::LoadWithPartialName("System.Security"); $v=[Console]::In.ReadToEnd(); [Text.Encoding]::UTF8.GetString([Security.Cryptography.ProtectedData]::Unprotect([Convert]::FromBase64String($v),$null,[Security.Cryptography.DataProtectionScope]::CurrentUser))',
         value.encrypted));
       return validateToken(value.token);
     } catch { throw new Error('Token unavailable. Run setup / 未找到令牌，请运行安装向导。'); }
@@ -45,7 +45,7 @@ export class CredentialStore {
     }
     mkdirSync(this.dir, {recursive:true,mode:0o700});
     const data = this.platform === 'win32'
-      ? {encrypted:this.powershell('$v=[Console]::In.ReadToEnd(); ConvertTo-SecureString -String $v -AsPlainText -Force | ConvertFrom-SecureString',token)}
+      ? {format:'dpapi-v1',encrypted:this.powershell('[void][Reflection.Assembly]::LoadWithPartialName("System.Security"); $v=[Console]::In.ReadToEnd(); [Convert]::ToBase64String([Security.Cryptography.ProtectedData]::Protect([Text.Encoding]::UTF8.GetBytes($v),$null,[Security.Cryptography.DataProtectionScope]::CurrentUser))',token)}
       : {token};
     const temporary = this.file + '.tmp-' + process.pid;
     writeFileSync(temporary, JSON.stringify(data), {mode:0o600,flag:'wx'});

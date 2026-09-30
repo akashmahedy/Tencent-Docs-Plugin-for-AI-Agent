@@ -3,7 +3,6 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, rmSync, readFileSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { spawnSync } from 'node:child_process';
 import { CredentialStore, validateToken } from '../plugins/tencent-docs/scripts/credentials.mjs';
 test('rejects empty and multiline credentials',()=>{
   for(const value of ['', ' ', 'one\ntwo','one\r','one\0two',null])assert.throws(()=>validateToken(value));
@@ -24,15 +23,9 @@ test('Windows uses DPAPI and round trips without plaintext on disk',{skip:proces
   const dir=mkdtempSync(join(tmpdir(),'tencent-dpapi-test-'));
   try{
     const store=new CredentialStore({dir});
-    // CI diagnostics are restricted to the synthetic test input, never real credentials.
-    store.powershell=(script,input)=>{
-      const r=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',script],{input,encoding:'utf8',windowsHide:true,timeout:15000});
-      if(r.error||r.status!==0)throw new Error('Synthetic DPAPI test: '+(r.error?.message || r.stderr.split(input).join('[TEST VALUE]')));
-      return r.stdout.trim();
-    };
     store.save('synthetic-dpapi-token');
     assert.ok(!readFileSync(store.file,'utf8').includes('synthetic-dpapi-token'));
-    assert.equal(store.load(),'synthetic-dpapi-token');store.remove();
+    assert.equal(store.load(),'synthetic-dpapi-token');store.save('synthetic-dpapi-replacement');assert.equal(store.load(),'synthetic-dpapi-replacement');store.remove();
   }finally{rmSync(dir,{recursive:true,force:true});}
 });
 test('macOS Keychain stdin storage round trips without modifying other services',{skip:process.platform!=='darwin'||process.env.RUN_KEYCHAIN_TESTS!=='1'},()=>{
