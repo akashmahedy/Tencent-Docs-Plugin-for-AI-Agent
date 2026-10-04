@@ -34,7 +34,10 @@ jobs:
           TENCENT_DOCS_FORCE_PORTABLE_NODE: '1'
           TENCENT_DOCS_RUNTIME_DIR: ${{ runner.temp }}/tencent-docs-node
         run: |
+          # Remove preinstalled Node from PATH to exercise a fresh Windows PC.
+          $env:PATH = "$env:SystemRoot\System32;$env:SystemRoot;$env:SystemRoot\System32\WindowsPowerShell\v1.0"
           powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap.ps1 --help
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap.ps1 --help
+          # Exercise the actual double-click launcher too; EOF dismisses its pause.
+          cmd.exe /d /c "setup.cmd --help <nul"
           exit $LASTEXITCODE

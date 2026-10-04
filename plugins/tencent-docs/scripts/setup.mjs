@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { resolve, dirname, join } from 'node:path';
+import { resolve, dirname, join, delimiter } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createInterface } from 'node:readline/promises';
 import { CredentialStore } from './credentials.mjs';
@@ -13,7 +13,7 @@ const here=dirname(fileURLToPath(import.meta.url));
 const root=resolve(here,'../../..');
 const store=new CredentialStore();
 function run(binary,argv) {
-  return spawnSync(binary,argv,{encoding:'utf8',windowsHide:true,timeout:120000});
+  return spawnSync(binary,argv,{encoding:'utf8',windowsHide:true,timeout:120000,env:{...process.env,PATH:dirname(process.execPath)+delimiter+(process.env.PATH||'')}});
 }
 export function findCodex() {
   const candidates = [];
@@ -42,6 +42,22 @@ function codex(binary,argv) {
     return run('cmd.exe',['/d','/s','/c',[binary,...argv.map(quote)].join(' ')]);
   }
   return run(binary,argv);
+}
+export function pinInstalledRuntime(data) {
+  const locate = obj => {
+    if (!obj || typeof obj !== 'object') return null;
+    for (const [key, value] of Object.entries(obj)) {
+      if (typeof value === 'string' && /install.*path|plugin.*path|install.*dir|plugin.*dir|installedRoot/i.test(key) && existsSync(join(value, '.mcp.json'))) return value;
+      const child = locate(value); if (child) return child;
+    }
+    return null;
+  };
+  const installed = locate(data);
+  if (!installed) throw new Error('Missing installed plugin path');
+  const file = join(installed, '.mcp.json');
+  const config = JSON.parse(readFileSync(file, 'utf8'));
+  config.mcpServers.tencent_docs.command = process.execPath;
+  writeFileSync(file, JSON.stringify(config, null, 2) + '\n');
 }
 async function hiddenToken() {
   if(!process.stdin.isTTY || !process.stdin.setRawMode) throw new Error(zh?'请在交互式终端运行安装向导。':'Run setup in an interactive terminal.');
@@ -92,24 +108,9 @@ async function main() {
       const result=codex(binary,argv);
       if(result.error||result.status!==0) throw new Error('Plugin installation failed. Check CLI version and marketplace access / 插件安装失败，请检查 CLI 版本及市场访问权限');
       if(argv[1]==='add') {
-        // Resolve Node's executable in this installed copy for desktop apps with a restricted PATH.
-        try {
-          const data=JSON.parse(result.stdout);
-          const locate=obj=>{
-            if(!obj||typeof obj!=='object') return null;
-            for(const [key,value] of Object.entries(obj)) {
-              if(typeof value==='string' && /install.*path|plugin.*path|install.*dir|plugin.*dir|installedRoot/i.test(key) && existsSync(join(value,'.mcp.json'))) return value;
-              const child=locate(value);if(child)return child;
-            }
-            return null;
-          };
-          const installed=locate(data);
-          if(installed) {
-            const file=join(installed,'.mcp.json'),conf=JSON.parse(readFileSync(file,'utf8'));
-            conf.mcpServers.tencent_docs.command=process.execPath;
-            writeFileSync(file,JSON.stringify(conf,null,2)+'\n');
-          }
-        } catch { /* PATH must provide node when the CLI does not report its installed location. */ }
+        // Desktop apps can have a restricted PATH: use the exact setup runtime.
+        try { pinInstalledRuntime(JSON.parse(result.stdout)); }
+        catch { throw new Error('Cannot configure the installed Node runtime. Update Codex and rerun setup / 无法配置插件的 Node 运行时，请更新 Codex 后重新安装'); }
       }
     }
   }

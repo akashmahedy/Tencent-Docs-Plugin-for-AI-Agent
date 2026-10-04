@@ -16,8 +16,9 @@ document.querySelectorAll('[data-copy]').forEach(button => {
       input.style.opacity = '0';
       document.body.append(input);
       input.select();
-      copied = document.execCommand('copy');
-      input.remove();
+      try { copied = document.execCommand('copy'); }
+      catch { copied = false; }
+      finally { input.remove(); }
     }
     button.textContent = copied ? button.dataset.copied : button.dataset.failed;
     if (!copied) {

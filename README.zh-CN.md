@@ -11,7 +11,7 @@
 需要支持插件的 Codex 和腾讯文档账户。需要时，启动器会自动准备 Node.js。部分腾讯功能可能需要会员权限。
 
 1. 在 [Releases](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest) **下载并完整解压**插件 ZIP。请将文件夹保存在固定位置。
-2. **打开安装启动器：** macOS 使用 `setup.command`，Windows 使用 `setup.cmd`。Linux 或 macOS 阻止启动器时，在解压目录打开终端运行：
+2. **打开安装启动器：** Windows 双击 `setup.cmd`；macOS 打开 `setup.command`。Linux 或 macOS 阻止启动器时，在解压目录打开终端运行：
 
    ```sh
    bash setup.command --lang=zh
@@ -28,7 +28,7 @@
 点击代码块右上角的复制图标，再粘贴到 Codex：
 
 ```text
-请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按 START_HERE_FOR_CODEX.md 操作。不要假设电脑已安装 Node.js。新电脑请先用安装启动器：macOS/Linux 运行 setup.command，Windows 运行 setup.cmd；缺少 Node.js 或版本过旧时会自动下载并校验。在 Node 就绪前不要直接运行 node setup.mjs。在交互式终端让我私下输入腾讯令牌。
+请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按 START_HERE_FOR_CODEX.md 操作。不要假设电脑已安装 Node.js。新电脑请先用安装启动器：Windows 先运行 setup.cmd（PowerShell 中运行 .\setup.cmd），macOS/Linux 运行 bash setup.command；缺少 Node.js 或版本过旧时会自动下载并校验。在 Node 就绪前不要直接运行 node setup.mjs。在交互式终端让我私下输入腾讯令牌。
 ```
 
 ## 试着提问

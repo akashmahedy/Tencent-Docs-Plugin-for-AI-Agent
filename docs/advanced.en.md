@@ -10,7 +10,7 @@ The launchers reuse Node.js 22+ when available; otherwise they download pinned N
 
 Keep the extracted repository in a stable folder: it is the local marketplace source. To update, extract the latest release into that folder and run the setup launcher again. Git users can pull the latest changes and rerun the launcher. Saved credentials are reused.
 
-The wizard installs and checks the plugin using the Codex CLI. It does not overwrite your whole Codex configuration or edit Tencent documents during setup. If the CLI cannot report the installed plugin location, Node must be available on Codex's PATH.
+The wizard installs and checks the plugin using the Codex CLI. It does not overwrite your whole Codex configuration or edit Tencent documents during setup. Setup pins the installed plugin to the Node executable it prepared. If Codex cannot report the installed plugin location, setup asks you to update Codex rather than reporting success.
 
 ## Repository guide
 
@@ -53,7 +53,7 @@ Uninstall removes only `tencent-docs@akashmahedy-plugins`; an older personal ins
 
 | Symptom | What to do |
 |---|---|
-| Node not found | Use setup.command / setup.cmd to prepare Node automatically. |
+| Node not found | On Windows, use setup.cmd; on macOS/Linux, use setup.command to prepare Node automatically. |
 | Broken or missing Codex CLI | Update Codex; use `--codex "/absolute/path/to/codex"` if needed. macOS desktop paths are detected automatically. |
 | `400006` / authentication failed | Generate a valid token, then run `--replace-token --skip-install`. |
 | `400007` / permission check failed | Check Tencent account/VIP eligibility on Tencent's own site. |
@@ -69,7 +69,7 @@ The local bridge sends the token directly to `https://docs.qq.com/openapi/mcp`. 
 
 ## Compatibility and verification
 
-Node 22+; macOS and Windows are primary setup targets, with a Linux terminal fallback. GitHub Actions runs transport, credential-storage and package checks on macOS, Windows and Linux. Isolated Codex CLI installation, macOS Keychain persistence, and live Tencent read-only authentication/tool discovery are verified on macOS. A fresh desktop chat and Windows desktop application are separate checks; CI results do not claim those were tested.
+Windows is the primary setup target, with macOS support, with a Linux terminal fallback. GitHub Actions runs transport, credential-storage and package checks on macOS, Windows and Linux. Isolated Codex CLI installation, macOS Keychain persistence, and live Tencent read-only authentication/tool discovery are verified on macOS. A fresh desktop chat and Windows desktop application are separate checks; CI results do not claim those were tested.
 
 The bridge supports Tencent request/response MCP operations with JSON and SSE responses. It does not support unsolicited server-push, sampling or elicitation. It never automatically retries a document request after a timeout.
 

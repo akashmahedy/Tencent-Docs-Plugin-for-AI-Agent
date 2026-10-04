@@ -33,8 +33,14 @@ try {
                 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
                 $archive = Join-Path $stage 'node.zip'
                 Invoke-WebRequest -Uri "https://nodejs.org/download/release/$version/$asset" -OutFile $archive -UseBasicParsing -TimeoutSec 300
-                if ((Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected) { throw 'Node checksum failed; nothing was run.' }
-                Expand-Archive -LiteralPath $archive -DestinationPath $stage
+                # Use built-in .NET APIs even when PS5 inherits a PS7 module path.
+                $sha = [Security.Cryptography.SHA256]::Create()
+                $stream = [IO.File]::OpenRead($archive)
+                try { $actual = [BitConverter]::ToString($sha.ComputeHash($stream)).Replace('-', '').ToLowerInvariant() }
+                finally { $stream.Dispose(); $sha.Dispose() }
+                if ($actual -ne $expected) { throw 'Node checksum failed; nothing was run.' }
+                Add-Type -AssemblyName System.IO.Compression.FileSystem
+                [IO.Compression.ZipFile]::ExtractToDirectory($archive, $stage)
                 $extracted = Join-Path $stage "node-$version-win-$arch"
                 if (-not (Test-Node (Join-Path $extracted 'node.exe'))) { throw 'Downloaded Node cannot run on this OS.' }
                 if (Test-Path $runtime) { Move-Item -LiteralPath $runtime -Destination (Join-Path $stage 'previous-runtime') }
