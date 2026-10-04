@@ -4,13 +4,13 @@ Use Tencent Docs inside Codex: find documents, summarize them, and work with spr
 
 **Created by [akashmahedy](https://github.com/akashmahedy).** Community plugin using Tencent's official MCP service.
 
-[简体中文](README.zh-CN.md) · **[Download](https://github.com/akashmahedy/tencent-docs-codex-plugin/releases/latest)** · [Website](https://akashmahedy.github.io/tencent-docs-codex-plugin/)
+[简体中文](README.zh-CN.md) · **[Download](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest)** · [Website](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/)
 
 ## Install in 3 steps
 
 You need Codex with plugin support, [Node.js 22+](https://nodejs.org/), and a Tencent Docs account. Some Tencent features may require VIP access.
 
-1. **Download and extract** the plugin ZIP from [Releases](https://github.com/akashmahedy/tencent-docs-codex-plugin/releases/latest). Keep the folder in a stable location.
+1. **Download and extract** the plugin ZIP from [Releases](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest). Keep the folder in a stable location.
 2. **Open a terminal in that folder** and run:
 
    ```sh
@@ -27,7 +27,7 @@ The wizard installs the plugin, saves your token locally and checks the connecti
 
 Copy this into Codex:
 
-> Install https://github.com/akashmahedy/tencent-docs-codex-plugin. Follow START_HERE_FOR_CODEX.md and run node setup.mjs in an interactive terminal so I can enter my token privately.
+> Install https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent. Follow START_HERE_FOR_CODEX.md and run node setup.mjs in an interactive terminal so I can enter my token privately.
 
 ## Try it
 
@@ -37,7 +37,7 @@ Copy this into Codex:
 
 ## Need help?
 
-[Setup, updates and troubleshooting](docs/advanced.en.md) · [Report an issue](https://github.com/akashmahedy/tencent-docs-codex-plugin/issues)
+[Setup, updates and troubleshooting](docs/advanced.en.md) · [Report an issue](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues)
 
 Your token stays on your computer and is sent directly to Tencent. No maintainer proxy or telemetry. [Privacy details](PRIVACY.md).
 

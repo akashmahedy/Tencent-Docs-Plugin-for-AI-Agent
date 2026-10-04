@@ -18,7 +18,7 @@ The wizard installs and checks the plugin using the Codex CLI. It does not overw
 ## Add the GitHub marketplace manually
 
 ```bash
-codex plugin marketplace add akashmahedy/tencent-docs-codex-plugin
+codex plugin marketplace add akashmahedy/Tencent-Docs-Plugin-for-AI-Agent
 codex plugin add tencent-docs@akashmahedy-plugins
 ```
 
@@ -76,7 +76,7 @@ npm test
 npm run validate
 ```
 
-No npm dependencies are needed. [Report a bug](https://github.com/akashmahedy/tencent-docs-codex-plugin/issues) without tokens or private documents.
+No npm dependencies are needed. [Report a bug](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues) without tokens or private documents.
 
 Plugin packaging, local bridge, setup and bilingual documentation: **akashmahedy**. Remote MCP service and Tencent Docs: **Tencent**. [MIT License](../LICENSE) applies to this repository's code; Tencent's service, brands and terms remain Tencent's.
 

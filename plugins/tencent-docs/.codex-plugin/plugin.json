@@ -6,8 +6,8 @@
     "name": "akashmahedy",
     "url": "https://github.com/akashmahedy"
   },
-  "homepage": "https://akashmahedy.github.io/tencent-docs-codex-plugin/",
-  "repository": "https://github.com/akashmahedy/tencent-docs-codex-plugin",
+  "homepage": "https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/",
+  "repository": "https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent",
   "license": "MIT",
   "keywords": [
     "tencent-docs",
@@ -27,8 +27,8 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://akashmahedy.github.io/tencent-docs-codex-plugin/",
-    "privacyPolicyURL": "https://akashmahedy.github.io/tencent-docs-codex-plugin/privacy.html",
+    "websiteURL": "https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/",
+    "privacyPolicyURL": "https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/privacy.html",
     "defaultPrompt": [
       "Find and summarize a Tencent Docs document.",
       "查找并总结一份腾讯文档。"

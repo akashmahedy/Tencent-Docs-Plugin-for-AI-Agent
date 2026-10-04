@@ -4,13 +4,13 @@
 
 **由 [akashmahedy](https://github.com/akashmahedy) 创建。** 本社区插件连接腾讯官方 MCP 服务。
 
-[English](README.md) · **[下载插件](https://github.com/akashmahedy/tencent-docs-codex-plugin/releases/latest)** · [网站](https://akashmahedy.github.io/tencent-docs-codex-plugin/zh/)
+[English](README.md) · **[下载插件](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest)** · [网站](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/)
 
 ## 三步安装
 
 需要支持插件的 Codex、[Node.js 22 或更高版本](https://nodejs.org/)和腾讯文档账户。部分腾讯功能可能需要会员权限。
 
-1. 在 [Releases](https://github.com/akashmahedy/tencent-docs-codex-plugin/releases/latest) **下载并完整解压**插件 ZIP。请将文件夹保存在固定位置。
+1. 在 [Releases](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest) **下载并完整解压**插件 ZIP。请将文件夹保存在固定位置。
 2. **在该文件夹打开终端**，运行：
 
    ```sh
@@ -27,7 +27,7 @@
 
 把这段提示词复制到 Codex：
 
-> 请安装 https://github.com/akashmahedy/tencent-docs-codex-plugin。按照 START_HERE_FOR_CODEX.md 操作，在交互式终端运行 node setup.mjs --lang=zh，让我私下输入令牌。
+> 请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按照 START_HERE_FOR_CODEX.md 操作，在交互式终端运行 node setup.mjs --lang=zh，让我私下输入令牌。
 
 ## 试着提问
 
@@ -37,7 +37,7 @@
 
 ## 需要帮助？
 
-[安装、更新与常见问题](docs/advanced.zh-CN.md) · [反馈问题](https://github.com/akashmahedy/tencent-docs-codex-plugin/issues)
+[安装、更新与常见问题](docs/advanced.zh-CN.md) · [反馈问题](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues)
 
 令牌保存在自己的电脑上，并直接发送给腾讯。没有开发者代理或遥测。[隐私说明](PRIVACY.md)。
 

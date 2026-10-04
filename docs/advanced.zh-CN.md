@@ -18,7 +18,7 @@
 ## 手动添加 GitHub 插件市场
 
 ```bash
-codex plugin marketplace add akashmahedy/tencent-docs-codex-plugin
+codex plugin marketplace add akashmahedy/Tencent-Docs-Plugin-for-AI-Agent
 codex plugin add tencent-docs@akashmahedy-plugins
 ```
 
@@ -76,7 +76,7 @@ npm test
 npm run validate
 ```
 
-无需安装 npm 依赖。[提交问题](https://github.com/akashmahedy/tencent-docs-codex-plugin/issues) 时请勿附带令牌或私人文档。
+无需安装 npm 依赖。[提交问题](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues) 时请勿附带令牌或私人文档。
 
 插件打包、本地桥接、安装向导及双语文档：**akashmahedy**。远程 MCP 服务及腾讯文档产品：**腾讯**。本仓库代码采用 [MIT 许可证](../LICENSE)；腾讯服务、商标及使用条款仍归腾讯所有。
 
