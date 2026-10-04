@@ -2,9 +2,13 @@
 
 [Back to the quick start](../README.md) | [简体中文](advanced.zh-CN.md)
 
+## Automatic Node setup
+
+The launchers reuse Node.js 22+ when available; otherwise they download pinned Node.js 22.23.3 from nodejs.org, verify SHA-256 against the bundled official checksums, and save a private per-user runtime. No administrator access or system PATH change is required. Internet access and a supported OS are required. Runtime: macOS `~/Library/Application Support/akashmahedy/tencent-docs/runtime`, Windows `%LOCALAPPDATA%/akashmahedy/tencent-docs/runtime`, Linux `${XDG_DATA_HOME:-~/.local/share}/akashmahedy/tencent-docs/runtime`. Linux needs bash, curl, tar and shasum/sha256sum. Once prepared, the `node setup.mjs` commands below can be run using the cached Node executable, or pass the same flags to the launcher.
+
 ## Updating
 
-Keep the extracted repository in a stable folder: it is the local marketplace source. To update, extract the latest release into that folder and run `node setup.mjs` again. Git users can pull the latest changes and rerun setup. Saved credentials are reused.
+Keep the extracted repository in a stable folder: it is the local marketplace source. To update, extract the latest release into that folder and run the setup launcher again. Git users can pull the latest changes and rerun the launcher. Saved credentials are reused.
 
 The wizard installs and checks the plugin using the Codex CLI. It does not overwrite your whole Codex configuration or edit Tencent documents during setup. If the CLI cannot report the installed plugin location, Node must be available on Codex's PATH.
 
@@ -34,13 +38,13 @@ The plugin includes guidance to distinguish standard spreadsheets from SmartShee
 
 ## Check, replace token and uninstall
 
-From the repository folder:
+From the repository folder on macOS/Linux (on Windows, use `setup.cmd` with the same flags):
 
 ```bash
-node setup.mjs --check --lang=en
-node setup.mjs --replace-token --skip-install --lang=en
-node setup.mjs --uninstall --lang=en
-node setup.mjs --forget-token --lang=en
+bash setup.command --check --lang=en
+bash setup.command --replace-token --skip-install --lang=en
+bash setup.command --uninstall --lang=en
+bash setup.command --forget-token --lang=en
 ```
 
 Uninstall removes only `tencent-docs@akashmahedy-plugins`; an older personal installation is not removed. To stop all Tencent Docs access, disable/remove any older Tencent plugin too. Token deletion is separate so an accidental uninstall does not erase your saved login.
@@ -49,7 +53,7 @@ Uninstall removes only `tencent-docs@akashmahedy-plugins`; an older personal ins
 
 | Symptom | What to do |
 |---|---|
-| Node not found | Install Node.js 22+ and reopen the terminal. |
+| Node not found | Use setup.command / setup.cmd to prepare Node automatically. |
 | Broken or missing Codex CLI | Update Codex; use `--codex "/absolute/path/to/codex"` if needed. macOS desktop paths are detected automatically. |
 | `400006` / authentication failed | Generate a valid token, then run `--replace-token --skip-install`. |
 | `400007` / permission check failed | Check Tencent account/VIP eligibility on Tencent's own site. |

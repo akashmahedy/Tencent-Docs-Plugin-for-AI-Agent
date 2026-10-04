@@ -1,5 +1,11 @@
 # Changelog · 更新日志
 
+## 1.2.0 — 2026-10-04
+
+- Mac, Windows and Linux launchers prepare a private, checksum-verified official Node.js runtime when Node is missing or too old / 缺少 Node 或版本过旧时，启动器自动准备校验过的官方 Node 运行时。
+- One-click copy for Codex prompts and setup commands on both website languages / 网站两种语言的 Codex 提示词与安装命令支持一键复制。
+- GitHub README prompts now use copyable code blocks and explain setup on a fresh computer / README 提示词改为可复制代码块，包含新电脑缺少 Node 时的操作说明。
+
 ## 1.1.1 — 2026-10-04
 
 - Short three-step English and Chinese quick starts / 简洁的中英文三步安装说明。

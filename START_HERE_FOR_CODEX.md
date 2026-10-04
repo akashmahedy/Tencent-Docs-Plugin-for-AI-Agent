@@ -1,14 +1,16 @@
 # Install Tencent Docs for Codex / 安装腾讯文档插件
 
-Read README.md or README.zh-CN.md and inspect plugins/tencent-docs/scripts/setup.mjs before installation. Install only when the user requested setup. Requires Node 22+ and a working Codex CLI with plugin support. The macOS wizard finds the desktop bundled CLI when the PATH shim is broken.
+Read README.md or README.zh-CN.md and inspect scripts/bootstrap.sh, scripts/bootstrap.ps1 and plugins/tencent-docs/scripts/setup.mjs before installation. Install only when the user requested setup. Requires a working Codex CLI with plugin support. The launcher downloads a checksum-verified private Node.js runtime from nodejs.org if Node 22+ is missing. The macOS wizard finds the desktop bundled CLI when the PATH shim is broken.
 
 Run from this repository:
 
 ```sh
-node setup.mjs --lang=en
+bash setup.command --lang=en
 # 中文：
-node setup.mjs --lang=zh
+bash setup.command --lang=zh
 ```
+
+On Windows run `setup.cmd` (or `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap.ps1 --lang=en`). Do not start with `node setup.mjs` on a fresh computer; use the launcher first. It reuses a compatible installed Node or downloads its own per-user runtime without admin privileges or system PATH changes.
 
 The user enters their own Tencent token in an interactive hidden terminal prompt. Never ask for the token in chat, pass it as a command argument, read it into your messages, or include it in a package. If your executor cannot provide private terminal input, open a terminal and ask the user to run the command there. Do not claim setup complete until the connection check succeeds; restart Codex and verify tool availability in a fresh chat. Setup checks do not prove document-write workflows. Do not create or edit a document solely for installation verification.
 

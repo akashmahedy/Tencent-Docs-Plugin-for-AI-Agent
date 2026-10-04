@@ -1,6 +1,6 @@
 {
   "name": "tencent-docs-codex-plugin",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,7 +9,7 @@
   "scripts": {
     "setup": "node setup.mjs",
     "check": "node setup.mjs --check",
-    "test": "node --test tests/credentials.test.mjs tests/setup.test.mjs tests/transport.test.mjs",
+    "test": "node --test tests/credentials.test.mjs tests/setup.test.mjs tests/transport.test.mjs tests/bootstrap.test.mjs",
     "validate": "node scripts/validate.mjs"
   },
   "license": "MIT",

@@ -2,9 +2,13 @@
 
 [返回快速安装](../README.zh-CN.md) | [English](advanced.en.md)
 
+## 自动准备 Node
+
+启动器会复用已有的 Node.js 22+；否则从 nodejs.org 下载固定版本 Node.js 22.23.3，用发布包内的官方 SHA-256 校验值验证，再保存在本机用户专属目录。无需管理员权限，也不会修改系统 PATH。首次下载需要联网和受支持的系统。运行时位置：macOS `~/Library/Application Support/akashmahedy/tencent-docs/runtime`，Windows `%LOCALAPPDATA%/akashmahedy/tencent-docs/runtime`，Linux `${XDG_DATA_HOME:-~/.local/share}/akashmahedy/tencent-docs/runtime`。Linux 需要 bash、curl、tar 和 shasum/sha256sum。下方 `node setup.mjs` 的参数也可以传给安装启动器，无需系统安装 Node。
+
 ## 更新
 
-请将解压目录保存在固定位置，它是本地插件市场的数据源。更新时，将最新发布包解压到该目录，再运行 `node setup.mjs --lang=zh`。使用 Git 时，可拉取最新版本后重新运行向导。已有凭据会被复用。
+请将解压目录保存在固定位置，它是本地插件市场的数据源。更新时，将最新发布包解压到该目录，再运行安装启动器。使用 Git 时，可拉取最新版本后重新运行启动器。已有凭据会被复用。
 
 向导通过 Codex CLI 安装和检查插件，不会整体覆盖已有 Codex 配置，也不会在安装过程中编辑腾讯文档。如果 CLI 无法报告安装路径，Codex 的 PATH 中需提供 Node。
 
@@ -34,13 +38,13 @@ codex plugin add tencent-docs@akashmahedy-plugins
 
 ## 检查连接、更换令牌和卸载
 
-在仓库目录运行：
+在仓库目录运行（macOS/Linux；Windows 使用 `setup.cmd`，参数相同）：
 
 ```bash
-node setup.mjs --check --lang=zh
-node setup.mjs --replace-token --skip-install --lang=zh
-node setup.mjs --uninstall --lang=zh
-node setup.mjs --forget-token --lang=zh
+bash setup.command --check --lang=zh
+bash setup.command --replace-token --skip-install --lang=zh
+bash setup.command --uninstall --lang=zh
+bash setup.command --forget-token --lang=zh
 ```
 
 卸载只移除 `tencent-docs@akashmahedy-plugins`，不会移除旧的个人安装。若需停止所有腾讯文档访问，也请禁用或移除其他已安装的腾讯插件。删除令牌是独立操作，避免误卸载时丢失本地登录信息。
@@ -49,7 +53,7 @@ node setup.mjs --forget-token --lang=zh
 
 | 问题 | 解决方法 |
 |---|---|
-| 找不到 Node | 安装 Node.js 22 或更高版本，再重新打开终端。 |
+| 找不到 Node | 使用 setup.command 或 setup.cmd 自动准备 Node。 |
 | Codex CLI 不可用 | 更新 Codex，必要时使用 `--codex "/完整路径/codex"`。macOS 内置路径会自动检测。 |
 | `400006` 或认证失败 | 重新生成有效令牌，再运行 `--replace-token --skip-install`。 |
 | `400007` 或权限检查失败 | 在腾讯网站检查账户或会员权限。 |

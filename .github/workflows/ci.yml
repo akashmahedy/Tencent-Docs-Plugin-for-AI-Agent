@@ -18,3 +18,23 @@ jobs:
           node-version: '22'
       - run: npm test
       - run: npm run validate
+      - name: Fresh computer without Node (macOS / Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          TENCENT_DOCS_FORCE_PORTABLE_NODE: '1'
+          TENCENT_DOCS_RUNTIME_DIR: ${{ runner.temp }}/tencent-docs-node
+        run: |
+          bash scripts/bootstrap.sh --help
+          bash scripts/bootstrap.sh --help
+      - name: Fresh computer without Node (Windows PowerShell 5)
+        if: runner.os == 'Windows'
+        shell: powershell
+        env:
+          TENCENT_DOCS_FORCE_PORTABLE_NODE: '1'
+          TENCENT_DOCS_RUNTIME_DIR: ${{ runner.temp }}/tencent-docs-node
+        run: |
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap.ps1 --help
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap.ps1 --help
+          exit $LASTEXITCODE

@@ -8,16 +8,16 @@ Use Tencent Docs inside Codex: find documents, summarize them, and work with spr
 
 ## Install in 3 steps
 
-You need Codex with plugin support, [Node.js 22+](https://nodejs.org/), and a Tencent Docs account. Some Tencent features may require VIP access.
+You need Codex with plugin support and a Tencent Docs account. The launcher prepares Node.js automatically if needed. Some Tencent features may require VIP access.
 
 1. **Download and extract** the plugin ZIP from [Releases](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest). Keep the folder in a stable location.
-2. **Open a terminal in that folder** and run:
+2. **Open the setup launcher:** `setup.command` on macOS or `setup.cmd` on Windows. On Linux, or if macOS blocks the launcher, open a terminal in the extracted folder and run:
 
    ```sh
-   node setup.mjs
+   bash setup.command
    ```
 
-   Choose English or 简体中文. You can also open `setup.command` on macOS or `setup.cmd` on Windows. If macOS blocks the downloaded launcher, use the terminal command above after reviewing the source.
+   Choose English or 简体中文. No separate Node installation is needed; internet access is required for the first download.
 
 3. **Connect your account.** Get your token from [Tencent](https://docs.qq.com/open/auth/mcp.html) and paste it into the wizard's hidden terminal prompt. When setup succeeds, restart Codex, open a new chat and enable the plugin.
 
@@ -25,9 +25,11 @@ The wizard installs the plugin, saves your token locally and checks the connecti
 
 ## Prefer asking Codex to install it?
 
-Copy this into Codex:
+Use the copy icon at the top-right of this block, then paste it into Codex:
 
-> Install https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent. Follow START_HERE_FOR_CODEX.md and run node setup.mjs in an interactive terminal so I can enter my token privately.
+```text
+Install https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent. Follow START_HERE_FOR_CODEX.md. Do not assume Node.js is installed. On a fresh computer, use setup.command on macOS/Linux or setup.cmd on Windows first; the launcher downloads and verifies Node.js automatically when it is missing or too old. Do not run node setup.mjs before Node is ready. Use an interactive terminal so I can enter my Tencent token privately.
+```
 
 ## Try it
 

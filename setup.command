@@ -1,11 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")" || exit 1
-setup_status=1
-if ! command -v node >/dev/null 2>&1; then
-  echo "Install Node.js 22+ from https://nodejs.org/ / 请先安装 Node.js 22 或更高版本。"
-else
-  node setup.mjs "$@"
-  setup_status=$?
-fi
-read -r -p "Press Enter to close / 按回车关闭" _
+bash scripts/bootstrap.sh "$@"
+setup_status=$?
+if [ -t 0 ]; then read -r -p "Press Enter to close / 按回车关闭" _; fi
 exit "$setup_status"
