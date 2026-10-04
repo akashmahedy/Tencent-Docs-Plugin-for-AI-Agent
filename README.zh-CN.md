@@ -25,7 +25,7 @@
 
 ## 想让 Codex 帮您安装？
 
-点击代码块右上角的复制图标，再粘贴到 Codex：
+[在网站上一键复制提示词](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/#codex-install)，也可以点击代码块右上角的复制图标：
 
 ```text
 请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按 START_HERE_FOR_CODEX.md 操作。不要假设电脑已安装 Node.js。新电脑请先用安装启动器：Windows 先运行 setup.cmd（PowerShell 中运行 .\setup.cmd），macOS/Linux 运行 bash setup.command；缺少 Node.js 或版本过旧时会自动下载并校验。在 Node 就绪前不要直接运行 node setup.mjs。在交互式终端让我私下输入腾讯令牌。

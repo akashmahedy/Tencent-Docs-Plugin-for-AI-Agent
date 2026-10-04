@@ -25,7 +25,7 @@ The wizard installs the plugin, saves your token locally and checks the connecti
 
 ## Prefer asking Codex to install it?
 
-Use the copy icon at the top-right of this block, then paste it into Codex:
+[Copy the prompt with one click on the website](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/#codex-install), or use the copy icon at the top-right of this block:
 
 ```text
 Install https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent. Follow START_HERE_FOR_CODEX.md. Do not assume Node.js is installed. On a fresh computer, use setup.cmd on Windows first (in PowerShell, run .\setup.cmd); on macOS/Linux, use bash setup.command; the launcher downloads and verifies Node.js automatically when it is missing or too old. Do not run node setup.mjs before Node is ready. Use an interactive terminal so I can enter my Tencent token privately.

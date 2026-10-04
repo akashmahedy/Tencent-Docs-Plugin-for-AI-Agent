@@ -2,7 +2,7 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 function Test-Node([string]$Binary) {
-    try { & $Binary -e 'process.exit(Number(process.versions.node.split(".")[0]) >= 22 ? 0 : 1)' *> $null; return $LASTEXITCODE -eq 0 }
+    try { & $Binary -e 'process.exit(parseInt(process.versions.node)>=22?0:1)' *> $null; return $LASTEXITCODE -eq 0 }
     catch { return $false }
 }
 try {
