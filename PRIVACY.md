@@ -10,4 +10,4 @@ Codex and Tencent process the document requests and responses you authorize. The
 
 您授权的文档请求和响应由 Codex 与腾讯处理，相关平台政策适用。删除本机凭据不会在腾讯撤销令牌，必要时请通过腾讯撤销。钥匙串或 DPAPI 不能阻止以您当前用户身份运行的其他程序访问凭据。
 
-Support / 支持：https://github.com/akashmahedy/tencent-docs-codex-plugin/issues
+Support / 支持：https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues
