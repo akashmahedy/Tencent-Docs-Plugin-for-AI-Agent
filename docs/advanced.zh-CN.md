@@ -69,7 +69,7 @@ bash setup.command --forget-token --lang=zh
 
 ## 兼容性与验证
 
-启动器会自动准备 Node 22 或更高版本。主要安装目标是 Windows，也支持 macOS，并提供 Linux 终端模式。GitHub Actions 在三个系统上运行传输、凭据存储和发布包检查。已在 macOS 验证隔离的 Codex CLI 安装、钥匙串保存，以及腾讯服务实时只读认证和工具发现。新桌面聊天与 Windows 桌面应用属于另外的检查，CI 结果不代表已完成这些验证。
+启动器会自动准备 Node 22 或更高版本。同时支持 Windows 与 macOS，并提供 Linux 终端模式。GitHub Actions 在三个系统上运行传输、凭据存储和发布包检查。已在 macOS 验证隔离的 Codex CLI 安装、钥匙串保存，以及腾讯服务实时只读认证和工具发现。新桌面聊天与 Windows 桌面应用属于另外的检查，CI 结果不代表已完成这些验证。
 
 桥接程序支持腾讯 MCP 请求/响应操作及 JSON、SSE 响应，不支持主动服务器推送、sampling 或 elicitation。请求超时后不会自动重试文档操作。
 

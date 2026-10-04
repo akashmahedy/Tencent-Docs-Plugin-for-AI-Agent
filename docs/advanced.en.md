@@ -69,7 +69,7 @@ The local bridge sends the token directly to `https://docs.qq.com/openapi/mcp`. 
 
 ## Compatibility and verification
 
-Windows is the primary setup target, with macOS support, with a Linux terminal fallback. GitHub Actions runs transport, credential-storage and package checks on macOS, Windows and Linux. Isolated Codex CLI installation, macOS Keychain persistence, and live Tencent read-only authentication/tool discovery are verified on macOS. A fresh desktop chat and Windows desktop application are separate checks; CI results do not claim those were tested.
+Windows and macOS are both supported setup targets, with a Linux terminal fallback. GitHub Actions runs transport, credential-storage and package checks on macOS, Windows and Linux. Isolated Codex CLI installation, macOS Keychain persistence, and live Tencent read-only authentication/tool discovery are verified on macOS. A fresh desktop chat and Windows desktop application are separate checks; CI results do not claim those were tested.
 
 The bridge supports Tencent request/response MCP operations with JSON and SSE responses. It does not support unsolicited server-push, sampling or elicitation. It never automatically retries a document request after a timeout.
 

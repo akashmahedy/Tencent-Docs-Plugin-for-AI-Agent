@@ -2,7 +2,9 @@
 
 Read README.md or README.zh-CN.md and inspect scripts/bootstrap.sh, scripts/bootstrap.ps1 and plugins/tencent-docs/scripts/setup.mjs before installation. Install only when the user requested setup. Requires a working Codex CLI with plugin support. The launcher downloads a checksum-verified private Node.js runtime from nodejs.org if Node 22+ is missing. The macOS wizard finds the desktop bundled CLI when the PATH shim is broken.
 
-Run from the extracted repository folder. On Windows, use the launcher first (PowerShell):
+Windows and macOS are both supported. Detect the user’s OS and run the matching launcher from the extracted repository folder.
+
+Windows PowerShell:
 
 ```powershell
 .\setup.cmd --lang=en
@@ -10,7 +12,7 @@ Run from the extracted repository folder. On Windows, use the launcher first (Po
 .\setup.cmd --lang=zh
 ```
 
-On macOS/Linux:
+macOS Terminal (also supported on Linux):
 
 ```sh
 bash setup.command --lang=en

@@ -1,5 +1,10 @@
 # Changelog · 更新日志
 
+## 1.2.1 — 2026-10-04
+
+- Equal Windows and Mac setup instructions in both languages; Codex detects the OS and selects its launcher / 两种语言同等展示 Windows 与 Mac 安装说明，Codex 识别系统后选择对应启动器。
+- Windows and Mac terminal commands have separate copy buttons displayed side by side / Windows 与 Mac 终端命令并排显示，均有独立复制按钮。
+
 ## 1.2.0 — 2026-10-04
 
 - Mac, Windows and Linux launchers prepare a private, checksum-verified official Node.js runtime when Node is missing or too old / 缺少 Node 或版本过旧时，启动器自动准备校验过的官方 Node 运行时。
