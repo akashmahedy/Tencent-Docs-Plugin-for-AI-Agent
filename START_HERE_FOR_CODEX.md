@@ -5,9 +5,9 @@ Read README.md or README.zh-CN.md and inspect plugins/tencent-docs/scripts/setup
 Run from this repository:
 
 ```sh
-node plugins/tencent-docs/scripts/setup.mjs --lang=en
+node setup.mjs --lang=en
 # 中文：
-node plugins/tencent-docs/scripts/setup.mjs --lang=zh
+node setup.mjs --lang=zh
 ```
 
 The user enters their own Tencent token in an interactive hidden terminal prompt. Never ask for the token in chat, pass it as a command argument, read it into your messages, or include it in a package. If your executor cannot provide private terminal input, open a terminal and ask the user to run the command there. Do not claim setup complete until the connection check succeeds; restart Codex and verify tool availability in a fresh chat. Setup checks do not prove document-write workflows. Do not create or edit a document solely for installation verification.

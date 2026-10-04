@@ -64,7 +64,7 @@ export class TencentTransport {
 }
 export async function probe(token, options) {
   const transport = new TencentTransport(token, options);
-  const init = await transport.send({jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-03-26',capabilities:{},clientInfo:{name:'akashmahedy-tencent-docs-check',version:'1.1.0'}}});
+  const init = await transport.send({jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-03-26',capabilities:{},clientInfo:{name:'akashmahedy-tencent-docs-check',version:'1.1.1'}}});
   if(init?.error) throw new Error('Tencent initialization failed / 腾讯初始化失败');
   await transport.send({jsonrpc:'2.0',method:'notifications/initialized'});
   const list = await transport.send({jsonrpc:'2.0',id:2,method:'tools/list',params:{}});

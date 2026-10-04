@@ -1,14 +1,14 @@
 {
   "name": "tencent-docs-codex-plugin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "setup": "node plugins/tencent-docs/scripts/setup.mjs",
-    "check": "node plugins/tencent-docs/scripts/setup.mjs --check",
+    "setup": "node setup.mjs",
+    "check": "node setup.mjs --check",
     "test": "node --test tests/credentials.test.mjs tests/setup.test.mjs tests/transport.test.mjs",
     "validate": "node scripts/validate.mjs"
   },

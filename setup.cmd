@@ -3,7 +3,7 @@ chcp 65001 >nul
 cd /d "%~dp0"
 where node >nul 2>nul
 if errorlevel 1 goto missing
-node plugins\tencent-docs\scripts\setup.mjs %*
+node setup.mjs %*
 set setup_status=%errorlevel%
 goto finish
 :missing

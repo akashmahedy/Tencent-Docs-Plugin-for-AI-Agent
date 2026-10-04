@@ -15,7 +15,7 @@ for(const entry of marketplace.plugins){
  const mcp=JSON.parse(readFileSync(join(dir,manifest.mcpServers),'utf8'));
  for(const server of Object.values(mcp.mcpServers)){assert.equal(server.cwd,'.');assert.ok(existsSync(join(dir,server.args[0])));}
 }
-const names=['README.md','README.zh-CN.md','START_HERE_FOR_CODEX.md','LICENSE','PRIVACY.md','docs/index.html','docs/zh/index.html','docs/sitemap.xml'];
+const names=['README.md','README.zh-CN.md','START_HERE_FOR_CODEX.md','setup.mjs','LICENSE','PRIVACY.md','docs/advanced.en.md','docs/advanced.zh-CN.md','docs/index.html','docs/zh/index.html','docs/sitemap.xml'];
 for(const name of names)assert.ok(existsSync(join(root,name)),name+' missing');
 function walk(dir){
  for(const item of readdirSync(dir,{withFileTypes:true})){

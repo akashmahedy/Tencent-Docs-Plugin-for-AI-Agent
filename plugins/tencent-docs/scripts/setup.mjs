@@ -64,7 +64,7 @@ async function hiddenToken() {
 async function main() {
   if(Number(process.versions.node.split('.')[0])<22) throw new Error('Node.js 22+ required / 需要 Node.js 22 或更高版本');
   if(args.includes('--help')) {
-    console.log('node plugins/tencent-docs/scripts/setup.mjs [--lang=en|--lang=zh] [--check] [--forget-token] [--uninstall] [--codex PATH] [--skip-install] [--replace-token] [--install-only]');
+    console.log('node setup.mjs [--lang=en|--lang=zh] [--check] [--forget-token] [--uninstall] [--codex PATH] [--skip-install] [--replace-token] [--install-only]');
     return;
   }
   if(args.includes('--forget-token')) {store.remove();say('Saved token removed.','已删除保存的令牌。');return;}
@@ -124,4 +124,6 @@ async function main() {
   store.save(token);
   say('Ready. Discovered '+result.toolCount+' tools. Restart Codex and start a new chat.','设置完成，已发现 '+result.toolCount+' 个工具。请重启 Codex 并新建聊天。');
 }
-if(process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch((e)=>{ console.error(e.message); say('Setup/check failed. Check your token, Tencent permissions (400006/400007), network, Node and Codex CLI. Run --help for options.','安装或检查失败。请检查令牌、腾讯权限（400006/400007）、网络、Node 和 Codex CLI。运行 --help 查看选项。');process.exitCode=1;});
+export function runSetup() { return main().catch((e)=>{ console.error(e.message); say('Setup/check failed. Check your token, Tencent permissions (400006/400007), network, Node and Codex CLI. Run --help for options.','安装或检查失败。请检查令牌、腾讯权限（400006/400007）、网络、Node 和 Codex CLI。运行 --help 查看选项。');process.exitCode=1;}); }
+
+if(process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await runSetup();
