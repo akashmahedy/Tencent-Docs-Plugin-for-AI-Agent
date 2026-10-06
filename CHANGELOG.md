@@ -1,5 +1,10 @@
 # Changelog · 更新日志
 
+## 1.2.2 — 2026-10-06
+
+- Add QQ Docs / QQDocs alongside Tencent Docs in bilingual documentation, website metadata, structured alternate names and plugin presentation / 中英文文档、网站元数据、结构化别名及插件展示加入 QQ Docs / QQDocs。
+- Preserve the existing repository URL, plugin ID, MCP connection and credential storage / 保留仓库地址、插件标识、MCP 连接和凭据存储。
+
 ## 1.2.1 — 2026-10-04
 
 - Equal Windows and Mac setup instructions in both languages; Codex detects the OS and selects its launcher / 两种语言同等展示 Windows 与 Mac 安装说明，Codex 识别系统后选择对应启动器。

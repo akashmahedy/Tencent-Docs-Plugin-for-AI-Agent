@@ -1,11 +1,11 @@
 ---
 name: tencent-docs
-description: Search, read, create, or edit Tencent Docs through its MCP tools; supports English and Chinese requests for 腾讯文档 and 腾讯表格.
+description: Search, read, create, or edit Tencent Docs (QQ Docs / QQDocs / docs.qq.com) through its MCP tools; supports English and Chinese requests for 腾讯文档 and 腾讯表格.
 ---
 
-# Tencent Docs / 腾讯文档
+# Tencent Docs / QQ Docs / 腾讯文档
 
-Community plugin created by akashmahedy, using Tencent's official MCP service. Respond in the user's language, including English and 简体中文.
+Tencent Docs, QQ Docs and QQDocs refer to the same docs.qq.com service in this plugin. Community plugin created by akashmahedy, using Tencent's official MCP service. Respond in the user's language, including English and 简体中文.
 
 Use the available Tencent MCP tools and their current schemas. Do not assume tool names or account permissions from a static list. Search by title, return candidate documents when a title is ambiguous, and preserve returned IDs and URLs. Resolve the exact document, worksheet or record and inspect its contents before updating it.
 

@@ -1,6 +1,8 @@
-# Tencent Docs for Codex · 腾讯文档
+# Tencent Docs (QQ Docs) for Codex · 腾讯文档
 
-Use Tencent Docs inside Codex: find documents, summarize them, and work with spreadsheets.
+Use Tencent Docs (QQ Docs) inside Codex: find documents, summarize them, and work with spreadsheets.
+
+Looking for **QQ Docs**, **QQDocs**, or **docs.qq.com**? This plugin connects to the same Tencent Docs / 腾讯文档 service, using Tencent’s official MCP endpoint.
 
 **Created by [akashmahedy](https://github.com/akashmahedy).** Community plugin using Tencent's official MCP service.
 

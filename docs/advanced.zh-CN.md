@@ -1,4 +1,4 @@
-# 进阶安装与常见问题
+# 腾讯文档 / QQ Docs：进阶安装与常见问题
 
 [返回快速安装](../README.zh-CN.md) | [English](advanced.en.md)
 

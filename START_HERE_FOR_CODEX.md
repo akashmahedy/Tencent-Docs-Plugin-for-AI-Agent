@@ -1,4 +1,4 @@
-# Install Tencent Docs for Codex / 安装腾讯文档插件
+# Install Tencent Docs (QQ Docs) for Codex / 安装腾讯文档插件
 
 Read README.md or README.zh-CN.md and inspect scripts/bootstrap.sh, scripts/bootstrap.ps1 and plugins/tencent-docs/scripts/setup.mjs before installation. Install only when the user requested setup. Requires a working Codex CLI with plugin support. The launcher downloads a checksum-verified private Node.js runtime from nodejs.org if Node 22+ is missing. The macOS wizard finds the desktop bundled CLI when the PATH shim is broken.
 

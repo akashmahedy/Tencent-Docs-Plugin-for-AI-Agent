@@ -1,7 +1,7 @@
 {
   "name": "tencent-docs",
-  "version": "1.2.1",
-  "description": "Tencent Docs for Codex with guided setup / 腾讯文档 Codex 插件，提供引导式安装与配置。",
+  "version": "1.2.2",
+  "description": "Tencent Docs (QQ Docs) for Codex with guided setup / 腾讯文档 Codex 插件，提供引导式安装与配置。",
   "author": {
     "name": "akashmahedy",
     "url": "https://github.com/akashmahedy"
@@ -11,6 +11,9 @@
   "license": "MIT",
   "keywords": [
     "tencent-docs",
+    "qq-docs",
+    "qqdocs",
+    "docs.qq.com",
     "腾讯文档",
     "codex",
     "mcp"
@@ -18,9 +21,9 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Tencent Docs / 腾讯文档",
-    "shortDescription": "Read and edit Tencent Docs / 读取与编辑腾讯文档",
-    "longDescription": "Community plugin created by akashmahedy. Connects to Tencent's official MCP service with your own token. 社区插件，由 akashmahedy 创建；使用个人令牌连接腾讯官方 MCP 服务。",
+    "displayName": "Tencent Docs / QQ Docs / 腾讯文档",
+    "shortDescription": "Tencent / QQ Docs · 腾讯文档",
+    "longDescription": "Tencent Docs (QQ Docs / QQDocs, docs.qq.com) community plugin created by akashmahedy. Connects to Tencent's official MCP service with your own token. 腾讯文档社区插件，由 akashmahedy 创建；使用个人令牌连接腾讯官方 MCP 服务。",
     "developerName": "akashmahedy",
     "category": "Productivity",
     "capabilities": [

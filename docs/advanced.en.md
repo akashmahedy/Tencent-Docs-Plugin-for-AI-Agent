@@ -1,4 +1,4 @@
-# Advanced setup and troubleshooting
+# Tencent Docs (QQ Docs): advanced setup and troubleshooting
 
 [Back to the quick start](../README.md) | [简体中文](advanced.zh-CN.md)
 

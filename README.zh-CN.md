@@ -1,6 +1,8 @@
-# 腾讯文档 Codex 插件 · Tencent Docs
+# 腾讯文档 Codex 插件 · Tencent Docs / QQ Docs
 
 在 Codex 中查找和总结腾讯文档，并处理电子表格。
+
+如果您搜索的是 **QQ Docs**、**QQDocs** 或 **docs.qq.com**，本插件连接的就是同一个腾讯文档（Tencent Docs）服务，使用腾讯官方 MCP 接口。
 
 **由 [akashmahedy](https://github.com/akashmahedy) 创建。** 本社区插件连接腾讯官方 MCP 服务。
 
