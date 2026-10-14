@@ -8,6 +8,8 @@
 
 [English](README.md) · **[下载插件](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest)** · [网站](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/)
 
+**安装指南：** [Windows 与 Mac 下载及安装](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/#setup) · [Codex 添加插件市场](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/#marketplace) · [连接常见问题](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/#faq)
+
 ## 三步安装
 
 **同时支持 Windows 和 Mac。** 需要支持插件的 Codex 和腾讯文档账户。需要时，启动器会自动准备 Node.js。部分腾讯功能可能需要会员权限。

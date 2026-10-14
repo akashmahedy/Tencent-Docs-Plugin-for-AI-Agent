@@ -8,6 +8,8 @@ Looking for **QQ Docs**, **QQDocs**, or **docs.qq.com**? This plugin connects to
 
 [简体中文](README.zh-CN.md) · **[Download](https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest)** · [Website](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/)
 
+**Install guides:** [Windows & Mac setup](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/#setup) · [Add the Codex plugin marketplace](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/#marketplace) · [Connection help](https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/#faq)
+
 ## Install in 3 steps
 
 **Windows and Mac are both supported.** You need Codex with plugin support and a Tencent Docs account. The launcher prepares Node.js automatically if needed. Some Tencent features may require VIP access.

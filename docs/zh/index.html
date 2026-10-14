@@ -1,14 +1,76 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>腾讯文档 / QQ Docs Codex 插件 | akashmahedy</title><meta name="description" content="腾讯文档（Tencent Docs / QQ Docs）Codex 社区插件，由 akashmahedy 创建。支持 Windows 与 Mac 引导安装、凭据本机保存及中英文文档。"><link rel="canonical" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/"><link rel="alternate" hreflang="en" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/"><link rel="alternate" hreflang="zh-CN" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/"><link rel="alternate" hreflang="x-default" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/"><meta property="og:type" content="website"><meta property="og:title" content="腾讯文档 / QQ Docs Codex 插件 | akashmahedy"><meta property="og:description" content="腾讯文档（Tencent Docs / QQ Docs）Codex 社区插件，由 akashmahedy 创建。支持 Windows 与 Mac 引导安装、凭据本机保存及中英文文档。"><meta property="og:url" content="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/"><link rel="stylesheet" href="../style.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"腾讯文档 Codex 插件","applicationCategory":"ProductivityApplication","operatingSystem":"macOS, Windows, Linux","softwareVersion":"1.2.2","url":"https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/","author":{"@type":"Person","name":"akashmahedy","url":"https://github.com/akashmahedy"},"license":"https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/LICENSE","alternateName":["QQ Docs for Codex","QQ Docs Codex Plugin","QQDocs for Codex","Tencent Docs for Codex","腾讯文档 Codex 插件"],"description":"腾讯文档（Tencent Docs / QQ Docs）Codex 社区插件，提供引导安装和本机凭据存储。"}</script></head><body>
-<header><a class="brand" href="../index.html">Tencent Docs / QQ Docs <span aria-hidden="true">/</span> 腾讯文档</a><nav><a href="#setup">三步开始使用</a><a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent">GitHub</a><a class="language" href="../" lang="en">English</a></nav></header>
-<main><div class="hero"><div class="eyebrow">腾讯文档 / QQ Docs · Codex · MCP</div><h1>在 Codex 里，直接使用腾讯文档（QQ Docs）。</h1><p class="lead">搜索、读取和编辑文档与表格。中文安装向导带您完成连接，凭据保存在自己的电脑上。</p><div class="buttons"><a class="button" href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest">下载插件</a><a class="button secondary" href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent">查看 GitHub</a></div><p class="credit">由 akashmahedy 创建和维护 · 独立社区插件</p></div>
-<section id="qq-docs"><h2>搜索 QQ Docs？</h2><p>这里的 QQ Docs、QQDocs 和 docs.qq.com 指的是同一个腾讯文档（Tencent Docs）服务。本社区 Codex 插件直连腾讯官方 MCP 服务，用于查找、读取和编辑您的文档与表格。</p></section>
-<section id="codex-install"><h2>让 Codex 帮您安装</h2><p>复制以下提示词并粘贴到 Codex。不要在聊天中提供令牌。</p><div class="copy-bar"><span>Codex</span><button type="button" class="copy-button" data-copy="codex-prompt" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制提示词</button></div><pre class="prompt"><code id="codex-prompt">请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按 START_HERE_FOR_CODEX.md 操作。不要假设电脑已安装 Node.js。同时支持 Windows 和 macOS。请先识别我的操作系统，再使用对应启动器：Windows PowerShell 运行 .\setup.cmd；macOS 终端运行 bash setup.command（也支持 Linux）。两个启动器都会在缺少 Node.js 或版本过旧时自动下载并校验。在 Node 就绪前不要直接运行 node setup.mjs。在交互式终端让我私下输入腾讯令牌。</code></pre></section>
-<section id="setup"><h2>Windows 与 Mac 三步安装</h2><div class="grid"><article class="card"><div class="number">01</div><h3>下载并解压</h3><p>同一个 ZIP 同时支持 Windows 和 Mac。下载最新发布包并完整解压。需要支持插件的 Codex；需要时会自动准备 Node.js。</p></article><article class="card"><div class="number">02</div><h3>运行中文向导</h3><p>Windows 双击 setup.cmd；macOS 打开 setup.command。向导自动准备 Node.js、安装插件并检查连接。</p></article><article class="card"><div class="number">03</div><h3>配置个人令牌</h3><p>从腾讯页面获取自己的令牌，在隐藏终端输入中粘贴。成功后重启 Codex 并新建聊天。</p><a href="https://docs.qq.com/open/auth/mcp.html">腾讯令牌页面 ↗</a></article></div>
-<div class="platform-commands"><div><div class="copy-bar"><span>Windows PowerShell</span><button type="button" class="copy-button" data-copy="windows-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div><pre><code id="windows-command">.\setup.cmd --lang=zh</code></pre>
-</div><div><div class="copy-bar"><span>Mac 终端 / Linux</span><button type="button" class="copy-button" data-copy="setup-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div><pre><code id="setup-command">bash setup.command --lang=zh</code></pre></div></div><p class="note">不要把令牌粘贴到聊天或 GitHub。部分操作可能需要腾讯会员权限，网络需能访问 docs.qq.com。</p></section>
-<section><h2>您可以这样提问</h2><div class="grid"><article class="card">“查找‘周报’文档并总结主要内容。”</article><article class="card">“用这些数据创建一个普通电子表格。”</article><article class="card">“将这些行追加到这份指定的表格。”</article></div></section>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
 
-<section><h2>直接连接，凭据留在本机</h2><p>没有开发者代理或遥测。macOS 使用钥匙串，Windows 使用 DPAPI 加密；Linux 使用私有文件。文档请求由 Codex 与腾讯处理。</p><a href="../privacy.html">隐私说明</a></section>
-<section><h2>需要帮助？</h2><p>连接检查、更新方法与常见问题请查看详细说明。</p><a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/docs/advanced.zh-CN.md">查看安装指南 ↗</a></section></main>
-<footer><p>插件由 akashmahedy 创建。远程 MCP 服务由腾讯提供。本插件并非腾讯或 OpenAI 官方产品。</p><p>© 2026 <a href="https://github.com/akashmahedy">akashmahedy</a> · <a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/LICENSE">MIT 许可证</a></p></footer><script src="../copy.js" defer></script></body></html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>腾讯文档（QQ Docs）Codex 插件下载与安装 | 开源 MCP</title>
+<meta name="description" content="下载开源腾讯文档（Tencent Docs / QQ Docs）Codex 插件，通过 MCP 查找、读取和编辑文档与表格。提供 Windows、Mac 安装步骤、插件市场命令和常见问题，凭据保存在本机。">
+<link rel="canonical" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/">
+<link rel="alternate" hreflang="en" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/">
+<link rel="alternate" hreflang="zh-CN" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/">
+<link rel="alternate" hreflang="x-default" href="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="腾讯文档（QQ Docs）Codex 插件下载与安装 | 开源 MCP">
+<meta property="og:description" content="下载开源腾讯文档（Tencent Docs / QQ Docs）Codex 插件，通过 MCP 查找、读取和编辑文档与表格。提供 Windows、Mac 安装步骤、插件市场命令和常见问题，凭据保存在本机。">
+<meta property="og:url" content="https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="腾讯文档（QQ Docs）Codex 插件下载与安装 | 开源 MCP">
+<meta name="twitter:description" content="下载开源腾讯文档（Tencent Docs / QQ Docs）Codex 插件，通过 MCP 查找、读取和编辑文档与表格。提供 Windows、Mac 安装步骤、插件市场命令和常见问题，凭据保存在本机。">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/#plugin","name":"腾讯文档 / QQ Docs Codex 插件","applicationCategory":"ProductivityApplication","operatingSystem":"macOS, Windows, Linux","softwareVersion":"1.2.2","url":"https://akashmahedy.github.io/Tencent-Docs-Plugin-for-AI-Agent/zh/","downloadUrl":"https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/download/v1.2.2/tencent-docs-codex-plugin-1.2.2.zip","inLanguage":"zh-CN","author":{"@type":"Person","name":"akashmahedy","url":"https://github.com/akashmahedy"},"license":"https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/LICENSE","sameAs":"https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent","alternateName":["QQ Docs for Codex","QQ Docs Codex Plugin","QQDocs for Codex","Tencent Docs for Codex","腾讯文档 Codex 插件"],"description":"下载开源腾讯文档（Tencent Docs / QQ Docs）Codex 插件，通过 MCP 查找、读取和编辑文档与表格。提供 Windows、Mac 安装步骤、插件市场命令和常见问题，凭据保存在本机。","featureList":["Search and read Tencent Docs","Create and edit spreadsheets","Guided local setup","Local credential storage"]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳至正文</a>
+<header>
+<a class="brand" href="../">Tencent Docs / QQ Docs <span aria-hidden="true">/</span> 腾讯文档</a>
+<nav aria-label="主导航">
+<a href="#setup">安装</a>
+<a href="#examples">使用示例</a>
+<a href="#faq">常见问题</a>
+<a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent">GitHub</a>
+<a class="language" href="../" lang="en" hreflang="en">English</a>
+</nav>
+</header>
+<main id="main">
+<div class="hero" id="download">
+<div class="eyebrow">腾讯文档 / QQ Docs · Codex · MCP</div>
+<h1>腾讯文档 / <span class="keep">QQ Docs</span> 的 <span class="keep">Codex 插件</span>：<span class="keep">下载与安装</span></h1>
+<p class="lead">在 Codex 中查找、读取和编辑腾讯文档与表格。免费开源的社区插件，通过腾讯官方 MCP 服务连接您的账户。</p>
+<div class="buttons"><a class="button" href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/download/v1.2.2/tencent-docs-codex-plugin-1.2.2.zip">下载插件 ZIP</a><a class="button secondary" href="#setup">查看安装步骤</a></div>
+<p class="release-info">v1.2.2 · Windows / Mac / Linux · MIT 开源 · <a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/latest">其他版本与校验文件</a></p>
+<p><a href="#codex-install">也可以复制提示词，让 Codex 帮您安装 ↓</a></p>
+<p class="credit">由 akashmahedy 创建和维护 · 独立社区插件 · 安装指南更新于 <time datetime="2026-10-14">2026 年 10 月 14 日</time></p>
+</div>
+<section id="qq-docs"><h2>QQ Docs、QQDocs 和腾讯文档是同一个服务吗？</h2><p>是的。这里的 Tencent Docs、QQ Docs、QQDocs、腾讯文档和 docs.qq.com 指同一个腾讯在线文档服务。本项目提供 Codex 插件，并非腾讯文档官方桌面客户端。如果您要直接使用在线文档，可以<a href="https://docs.qq.com/">打开腾讯文档官网</a>。</p></section>
+<section id="setup"><h2>Windows 与 Mac 三步安装</h2><p>需要支持插件的 Codex、腾讯文档账户，以及能够访问 docs.qq.com 的网络。无需预先安装 Node.js：启动器会在需要时下载并校验运行环境。</p>
+<div class="grid"><article class="card"><div class="number">01</div><h3>下载并完整解压 ZIP</h3><p><a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/releases/download/v1.2.2/tencent-docs-codex-plugin-1.2.2.zip">下载 v1.2.2 插件</a>，将解压后的文件夹保存在固定位置。Windows 和 Mac 使用同一个发布包。</p></article><article class="card"><div class="number">02</div><h3>运行安装向导</h3><p>Windows 双击 <code>setup.cmd</code>；macOS 打开 <code>setup.command</code>，也可以在该文件夹的终端运行下方命令。向导会准备 Node.js 并安装插件。</p></article><article class="card"><div class="number">03</div><h3>连接账户并启用插件</h3><p>在<a href="https://docs.qq.com/open/auth/mcp.html">腾讯令牌页面</a>获取自己的令牌，私下粘贴到隐藏终端输入中。连接检查成功后，重启 Codex、新建聊天并启用插件。</p></article></div>
+<div class="platform-commands"><div class="command-block"><div class="copy-bar"><span>Windows PowerShell</span><button type="button" class="copy-button" data-copy="windows-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div>
+<pre><code id="windows-command">.\setup.cmd --lang=zh</code></pre></div><div class="command-block"><div class="copy-bar"><span>Mac 终端 / Linux</span><button type="button" class="copy-button" data-copy="setup-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div>
+<pre><code id="setup-command">bash setup.command --lang=zh</code></pre></div></div>
+<p class="note">插件代码免费，但腾讯服务的权限和会员规则仍然适用，部分操作可能需要会员。不要把令牌粘贴到聊天或 GitHub。</p></section>
+<section id="codex-install"><h2>让 Codex 帮您安装腾讯文档插件</h2><p>复制提示词并粘贴到 Codex。它会先识别操作系统，再使用对应安装启动器；令牌由您在私密终端中输入。</p>
+<div class="copy-bar"><span>Codex</span><button type="button" class="copy-button" data-copy="codex-prompt" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制提示词</button></div><pre class="prompt"><code id="codex-prompt">请安装 https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent。按 START_HERE_FOR_CODEX.md 操作。不要假设电脑已安装 Node.js。同时支持 Windows 和 macOS。请先识别我的操作系统，再使用对应启动器：Windows PowerShell 运行 .\setup.cmd；macOS 终端运行 bash setup.command（也支持 Linux）。两个启动器都会在缺少 Node.js 或版本过旧时自动下载并校验。在 Node 就绪前不要直接运行 node setup.mjs。在交互式终端让我私下输入腾讯令牌。</code></pre></section>
+<section id="marketplace"><h2>如何给 Codex 添加腾讯文档插件市场？</h2><p>已安装 Codex CLI 的用户可以手动添加这个 GitHub 插件市场。一般用户使用上面的安装向导即可，向导会处理插件安装。</p>
+<div class="command-block"><div class="copy-bar"><span>Codex CLI</span><button type="button" class="copy-button" data-copy="marketplace-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div>
+<pre><code id="marketplace-command">codex plugin marketplace add akashmahedy/Tencent-Docs-Plugin-for-AI-Agent
+codex plugin add tencent-docs@akashmahedy-plugins</code></pre></div>
+<p>手动添加后，还需下载并解压插件，在解压目录用下面的命令配置个人令牌并检查连接。这是仓库插件市场，不代表插件已进入 OpenAI 公共插件目录。</p>
+<div class="platform-commands"><div class="command-block"><div class="copy-bar"><span>Windows PowerShell</span><button type="button" class="copy-button" data-copy="manual-windows-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div>
+<pre><code id="manual-windows-command">.\setup.cmd --skip-install --lang=zh</code></pre></div><div class="command-block"><div class="copy-bar"><span>Mac 终端 / Linux</span><button type="button" class="copy-button" data-copy="manual-mac-command" data-copied="已复制！" data-failed="已选中，请按 Ctrl/Cmd+C">复制命令</button></div>
+<pre><code id="manual-mac-command">bash setup.command --skip-install --lang=zh</code></pre></div></div></section>
+<section id="examples"><h2>连接后，您可以这样使用 QQ Docs</h2><div class="grid"><article class="card"><h3>查找并总结文档</h3><p>“查找我的‘周报’文档，读取后总结主要内容。”</p></article><article class="card"><h3>创建普通电子表格</h3><p>“用这些列和数据创建一份普通电子表格。”</p></article><article class="card"><h3>更新指定表格</h3><p>“确认这份腾讯文档的链接和表名，再将这些行追加到该表格。”</p></article></div><p>操作受您的腾讯账户与文档权限约束。编辑前请确认目标文档；普通电子表格与智能表格并非同一种文件类型。</p></section>
+<section id="faq"><h2>下载与连接常见问题</h2><dl class="faq">
+<div><dt>这是腾讯文档桌面客户端的下载吗？</dt><dd>不是。这是给 Codex 使用的开源社区插件。若您需要腾讯文档本身，请访问 <a href="https://docs.qq.com/">docs.qq.com</a>。若您要让 Codex 处理腾讯文档，请下载本页插件 ZIP。</dd></div>
+<div><dt>为什么安装后看不到工具？</dt><dd>重启 Codex，打开新聊天并启用插件。如果 Codex 不支持仓库插件市场，请先更新到支持该功能的版本。</dd></div>
+<div><dt>提示 400006、认证失败或令牌失效怎么办？</dt><dd>先在腾讯页面获取有效令牌，再在解压目录运行启动器并加上 <code>--replace-token --skip-install</code>。不要将令牌发到聊天或问题反馈中。</dd></div>
+<div><dt>提示 400007 或权限检查失败怎么办？</dt><dd>在腾讯官网检查账户、文档访问权和会员资格。插件不能绕过腾讯的权限或会员限制。</dd></div>
+<div><dt>在哪里检查连接、更新或卸载？</dt><dd><a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/docs/advanced.zh-CN.md">详细安装与故障排查指南</a>包含 <code>--check</code>、更新、替换令牌及卸载步骤。仍有问题可<a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/issues">提交问题</a>，请勿包含令牌或私人文档。</dd></div>
+</dl></section>
+<section id="privacy"><h2>直接连接，凭据留在本机</h2><p>没有开发者代理或遥测。macOS 使用钥匙串，Windows 使用用户专属 DPAPI 加密文件；Linux 使用私有文件，插件不对该文件加密。文档请求由 Codex 与腾讯处理。<a href="../privacy.html">查看隐私说明</a>。</p></section>
+</main>
+<footer><p>插件由 akashmahedy 创建和维护；远程 MCP 服务由腾讯提供。本插件并非腾讯或 OpenAI 官方产品。</p><p>© 2026 <a href="https://github.com/akashmahedy">akashmahedy</a> · <a href="https://github.com/akashmahedy/Tencent-Docs-Plugin-for-AI-Agent/blob/main/LICENSE">MIT 许可证</a> · <a href="../">English guide</a></p></footer>
+<script src="../copy.js" defer></script>
+</body>
+</html>
